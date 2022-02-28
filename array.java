@@ -1,4 +1,4 @@
-public class Main
+public class array
 {
     public static void insertInTheEnd(int [] arr, int data, int len) {
         arr[len] = data;

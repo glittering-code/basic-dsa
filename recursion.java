@@ -6,7 +6,7 @@ C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, S
 Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
-public class Main
+public class recursion
 {
     public static int fibonacci(int n) {
         if(n < 0) {
