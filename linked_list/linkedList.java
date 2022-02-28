@@ -180,4 +180,16 @@ public class linkedList {
       prev = t;
     }
   }
+	public Node reverse() {
+		Node temp = root;
+		Node prev = null;
+		while(temp != null) {
+			Node next = temp.next;
+			temp.next = prev;
+			prev = temp;
+			temp = next;
+		}
+		root = prev;
+		return prev;
+	}
 }
