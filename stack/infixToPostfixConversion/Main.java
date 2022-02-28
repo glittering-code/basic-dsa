@@ -7,7 +7,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 import java.util.Stack;
-public class Main
+public class infixToPostfix
 {
     public static int prec(char ch) {
         if(ch == '+' || ch == '-') {
