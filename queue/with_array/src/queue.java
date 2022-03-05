@@ -14,7 +14,7 @@ public class queue {
   }
   //complexity = O(1)
   boolean isFull() {
-    if(end == arr.length) {
+    if(end == arr.length-1) {
       return true;
     } else {
       return false;
@@ -37,7 +37,7 @@ public class queue {
       return Integer.MIN_VALUE;
     }
     int d = arr[0];
-    //shift all the elements
+    //shift all the elements towards left
     for(int i = 1 ; i <= end ; ++i) {
       arr[i-1] = arr[i];
     }
