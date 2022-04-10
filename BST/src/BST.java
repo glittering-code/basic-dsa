@@ -119,6 +119,7 @@ public class BST {
   }
   Node findInorderSuccessor(Node temp) {
     Node right = temp.right;
+    // O(logn)
     while(right.left != null) {
       right = right.left;
     }
@@ -129,9 +130,11 @@ public class BST {
     n1.data = n2.data;
     n2.data = temp;
   }
+  //1 + 1 + O(logn) + O(1)/O(1)/O(2logn) = 3 + 3logn = logn
   boolean deleteNode(int d) {
-    Node temp = root;
-    Node parent = null;
+    Node temp = root; //1
+    Node parent = null; // 1
+    // O(logn)
     while(temp != null) {
       if(temp.data == d) {
         break;
@@ -144,12 +147,13 @@ public class BST {
         temp = temp.right;
       }
     }
+
     if(temp == null) {
       System.out.println("no such node with data" + d);
       return false;
     }
     //1st case
-    if(temp.left == null && temp.right == null) { // leaf
+    if(temp.left == null && temp.right == null) { // leaf //O(1)
       // parent.left = null;
       //parent.right = null;
       if(parent == null) { // it is the only node in the BST
@@ -161,7 +165,7 @@ public class BST {
           parent.right = null;
         }
       }
-    } else if(temp.left == null || temp.right == null ){ // it has one child
+    } else if(temp.left == null || temp.right == null ){ // it has one child //O(1)
       //parent.left = temp.left or temp.right;
       //parent.right = temp.left or temp.right;
       Node child ;
@@ -182,10 +186,10 @@ public class BST {
         }
       }
     } else {
-      Node succ = findInorderSuccessor(temp);
+      Node succ = findInorderSuccessor(temp); //logn
       // replace content of temp with successor
-      swap(succ,temp);
-      deleteNode(succ.data);
+      swap(succ,temp); //1
+      deleteNode(succ.data);//O(logn)
     }
     return true;
 
