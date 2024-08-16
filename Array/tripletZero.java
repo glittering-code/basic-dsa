@@ -1,6 +1,8 @@
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
-
+// *****************leetcode link ***********************   
+// https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/
+//****************************************************************
 class HelloWorld {
   // brute force appraoch with n^3 complexity
     public static boolean checkTripletZero(int [] arr) {
